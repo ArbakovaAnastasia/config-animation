@@ -241,8 +241,7 @@ body {
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 140px;
 }
 .register__text {
   width: 198.73px;
