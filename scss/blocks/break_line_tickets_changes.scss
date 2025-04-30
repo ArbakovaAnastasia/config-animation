@@ -1,0 +1,18 @@
+.break-line {
+    
+    background: $light-green;
+
+    &-yellow {
+        min-height: 16px;
+        margin: auto;
+        background: $yellow;
+    }
+
+    &-yellow.small{
+        min-width: 272px;
+    }
+
+    &-yellow.big{
+        min-width: 948px;
+    }
+}

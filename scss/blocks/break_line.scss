@@ -1,0 +1,14 @@
+.break-line {
+    width: 100%;
+    height: 16px;
+    display: flex;
+    gap: 60px;
+    background: $light-blue;
+
+    &-pink {
+        min-width: 270px;
+        min-height: 16px;
+        margin: auto;
+        background: $pink;
+    }
+}

@@ -1,0 +1,73 @@
+.header {
+    background: $green;
+
+    img {
+        width: 216px;
+        height: 39px;
+    }
+
+    &__button-speakers {
+        color: $light-yellow;
+
+        &::before{
+            background-image: linear-gradient(
+                to right,
+                $light-yellow 0 2px,
+                transparent 2px 6px,
+                $light-yellow 6px 12px,
+                transparent 12px 16px,
+                $light-yellow 16px 22px,
+                transparent 22px 26px,
+                $light-yellow 26px 32px,
+                transparent 32px 36px,
+                $light-yellow 36px 42px,
+                transparent 42px 46px,
+                $light-yellow 46px 52px,
+                transparent 52px 56px,
+                $light-yellow 56px 62px,
+                transparent 62px 66px,
+                $light-yellow 66px 72px,
+                transparent 72px 76px,
+                $light-yellow 76px 78px
+            );
+        }
+
+        &::after{
+            background-image: linear-gradient(
+                to right,
+                $black 0 2px,
+                transparent 2px 6px,
+                $black 6px 12px,
+                transparent 12px 16px,
+                $black 16px 22px,
+                transparent 22px 26px,
+                $black 26px 32px,
+                transparent 32px 36px,
+                $black 36px 42px,
+                transparent 42px 46px,
+                $black 46px 52px,
+                transparent 52px 56px,
+                $black 56px 62px,
+                transparent 62px 66px,
+                $black 66px 72px,
+                transparent 72px 76px,
+                $black 76px 78px
+            );
+        }
+
+        &:hover {
+            color: $black;
+        }
+    }
+
+    &__button-tickets {
+        background: $light-yellow;
+        color: $black;
+
+        &:hover {
+            background: $black;
+            color: $light-yellow;
+        }
+    }
+
+}

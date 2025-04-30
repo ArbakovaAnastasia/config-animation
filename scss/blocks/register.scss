@@ -1,0 +1,124 @@
+.register {
+    width: 100%;
+    height: auto;
+    padding: 80px 90px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 21.4px;
+
+    &__subtitle {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        @include font (400, 16px, 20px, -0.16px, middle, uppercase);
+        color: $black;
+
+        img {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    &__text {
+        width: 198.73px;
+        height: auto;
+        @include font (300, 23.25px, 31.2px, 0%, middle, none);
+        color: $black;
+    }
+
+    &__tickets-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 63.69px;
+    }
+
+    &__tickets {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        &-text {
+            @include font (300, 31.5px, 41.6px, 0%, middle, none);
+            color: $black;
+
+            span {
+                text-decoration: underline solid 2px;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+
+    &__button {
+        width: 930px;
+        height: 224.58px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border: 2px dashed $black;
+        border-radius: 8px;
+        padding: 32px 34px;
+        transition: all 0.5s;
+
+        &:hover {
+            background: #fff5da3a;
+            border: 2px dashed $light-yellow;
+        }
+
+        &-text {
+            @include font (300, 47.63px, 55.2px, -0.48px, middle, none);
+            color: $black;
+        }
+
+        &-middle-text {
+            @include font (300, 23.63px, 31.2px, 0%, middle, none);
+            color: $black;
+        }
+
+        &-description {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12.2px;
+
+            &-text {
+                @include font (400, 15.75px, 22.4px, 0.16px, middle, none);
+                color: $black;
+            }
+        }
+
+        &-price {
+            display: flex;
+            align-items: center;
+            gap: 9.8px;
+
+            &-old {
+                @include font (400, 24px, 100%, 0%, middle, none);
+                color: $black;
+                text-decoration: line-through;
+            }
+
+            &-new {
+                @include font (700, 22.69px, 100%, 0%, middle, none);
+                color: $black;
+            }
+
+            &-text {
+                @include font (300, 22.69px, 100%, 0%, middle, none);
+                color: $black;
+            }
+        }
+    }
+}

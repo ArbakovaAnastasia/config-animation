@@ -1,0 +1,114 @@
+.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 90px 31.49px;
+    background: $black;
+
+    &__up {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+
+        img {
+            width: 120px;
+            height: 43px;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 60px;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+
+        &-title {
+            @include font (400, 14.88px, 100%, -0.24px, middle, uppercase);
+            color: $light;
+        }
+
+        &-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &-link {
+            height: 20px;
+            display: flex;
+            gap: 5.38px;
+            text-decoration: none;
+            cursor: pointer;
+            
+            span {
+                @include font (400, 15.63px, 100%, -0.24px, middle, uppercase);
+                color: $light;
+                text-decoration: underline dashed $light;
+                text-underline-offset: 4px; 
+            }
+
+            img {
+                width: 8.62px;
+                height: 12px;
+            }
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: auto;
+        margin-top: 80px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__epilogue {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin-top: 1.51px;
+        @include font (400, 13.78px, 100%, 0%, middle, none);
+        color: $light;
+
+        img {
+            width: 12px;
+            height: 12px;
+        }
+
+        &-span1{
+            @include font (400, 14px, 21px, -0.14px, middle, capitalize);
+            margin-left: 8px;
+        }
+
+        &-span2{
+            @include font (400, 12.9px, 100%, -0.19px, middle, uppercase);
+            margin-left: 12.57px;
+        }
+
+        &-span3{
+            margin-left: 16.16px;
+        }
+
+        &-span4{
+            @include font (400, 14px, 100%, 0%, middle, none);
+            margin-left: 15.79px;
+        }
+
+        &-span5{
+            margin-left: 15.8px;
+        }
+    }
+}

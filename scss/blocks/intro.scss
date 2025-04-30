@@ -1,0 +1,525 @@
+.intro {
+    width: 100%;
+    height: auto;
+
+    &__text {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 82px;
+        padding-top: 36px;
+        padding-bottom: 18px;
+        @include font (400, 16px, 21.6px, -0.16px, middle, uppercase);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 92px;
+            transform: rotate(45deg);
+            width: 8px;
+            height: 8px;
+            background-color: $black;
+        }
+    }
+
+    &__animation {
+        width: 100%;
+        height: 284px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+
+
+        &-img-C {
+            width: 260px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            &--animation {
+                transition: transform 0.6s ease, opacity 0.6s ease;
+            }
+
+            &.active &--animation {
+                transform: rotate(-270deg) scale(0.2);
+                opacity: 0;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                background-color: $black;
+                border-radius: 50%;
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease,
+                    border-radius 0.5s ease 0.8s;
+            }
+
+            &.active::after {
+                opacity: 1;
+                transform: scale(1) rotate(45deg);
+                border-radius: 20%;
+            }
+        }
+
+        &-img-O {
+            width: 267px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            &--animation {
+                transition: transform 0.9s ease, opacity 0.9s ease;
+            }
+
+            &.active &--animation {
+                transform: rotate(180deg) scale(0.2);
+                opacity: 0;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 120px;
+                height: 120px;
+                background-color: $black;
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+            }
+
+            &.active::after {
+                opacity: 1;
+                transform: scale(1) rotate(45deg);
+            }
+
+            &.square::after {
+                transform: scale(0.7) rotate(90deg);
+                transition-delay: 0.5s;
+            }
+        }
+
+        &-img-N {
+            width: 260px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            &-1,
+            &-2,
+            &-3 {
+                content: "";
+                position: absolute;
+                transition: all 0.5s ease, opacity 0s ease;
+            }
+
+            &-1 {
+                height: 87px;
+                top: calc(50% - 100px);
+                left: calc(50% - 55px);
+            }
+
+            &-2 {
+                height: 126px;
+                top: calc(50% - 20px);
+                left: calc(50% - 89px);
+            }
+
+            &-3 {
+                height: 126px;
+                top: calc(50% - 20px);
+                left: calc(50% + 19px);
+            }
+
+            .square {
+                position: absolute;
+                width: 110px;
+                height: 110px;
+                background-color: $black;
+                top: calc(50% - 55px);
+                left: calc(50% - 55px);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+                transition: transform 0.3s ease;
+
+            }
+
+            &.moved {
+                .intro__animation-img-N-1 {
+                    height: 87px;
+                    top: calc(50% - 55px);
+                    left: calc(50% - 55px);
+                    transition-duration: 0.5s;
+                }
+
+                .intro__animation-img-N-2 {
+                    height: 110px;
+                    top: calc(50% - 55px);
+                    left: calc(50% - 55px);
+                    transition-duration: 0.5s;
+                }
+
+                .intro__animation-img-N-3 {
+                    height: 110px;
+                    top: calc(50% - 55px);
+                    left: calc(50% - 7px);
+                    transition-duration: 0.5s;
+                }
+            }
+
+            &.show-square .square {
+                opacity: 1;
+            }
+
+            &.square-rotate .square {
+                transform: rotate(45deg);
+            }
+        }
+
+        &-img-F {
+            width: 230px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            &-1,
+            &-2,
+            &-3 {
+                content: "";
+                position: absolute;
+                transition: transform 1s ease, opacity 1s ease, top 1s ease, left 1s ease;
+            }
+
+            &-1 {
+                width: 168px;
+                height: 75px;
+                top: calc(50% - 100px);
+                left: calc(50% - 90px);
+            }
+
+            &-2 {
+                width: 168px;
+                height: 75px;
+                top: calc(50% - 35px);
+                left: calc(50% - 90px);
+            }
+
+            &-3 {
+                width: 76.6px;
+                height: 110px;
+                top: calc(50% + 10px);
+                left: calc(50% - 90px);
+                opacity: 1;
+            }
+
+            &.animate {
+
+                .intro__animation-img-F-1 {
+                    top: calc(50% - 35px);
+                    transform: rotate(-45deg);
+                }
+
+                .intro__animation-img-F-2 {
+                    transform: rotate(-135deg);
+                }
+
+                .intro__animation-img-F-3 {
+                    opacity: 0;
+                    top: calc(50% - 55px);
+                    left: calc(50% - (76.6px /2));
+                }
+            }
+        }
+
+        &-img-I {
+            width: 146px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            .circle,
+            .rhomb {
+                content: "";
+                position: absolute;
+                background: $black;
+                transition: none;
+            }
+
+            .circle {
+                width: 96px;
+                height: 96px;
+                border-radius: 50%;
+                top: calc(50% - 110px);
+                left: calc(50% - 48px);
+                opacity: 1;
+            }
+
+            .rhomb {
+                width: 83px;
+                height: 83px;
+                border-radius: 20%;
+                transform: rotate(-45deg);
+                top: calc(50% + 10px);
+                left: calc(50% - 41.5px);
+                opacity: 1;
+            }
+
+            .circle.move-to-center {
+                animation-name: circle-move-to-center;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .circle.stretch-oval {
+                animation-name: circle-stretch-oval;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .circle.shrink-fadeout {
+                animation-name: circle-shrink-center-fadeout;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .circle.shrink-fadeout-return {
+                animation-name: circle-shrink-center-fadeout-return;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .rhomb.fadeout-move-center {
+                animation-name: rhomb-fadeout-move-center;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .rhomb.fadeout-move-center-opacity {
+                animation-name: rhomb-fadeout-move-center-opacity;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+
+            .rhomb.fadein-move-down {
+                animation-name: rhomb-fadein-move-down;
+                animation-duration: 1s;
+                animation-fill-mode: forwards;
+            }
+        }
+
+        &-img-G {
+            width: 279px;
+            height: 284px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 1s;
+
+            &-1,
+            &-2 {
+                content: "";
+                position: absolute;
+                transition: transform 1s ease, opacity 1s ease, top 1s ease, left 1s ease;
+            }
+
+            &-1 {
+                width: 158px;
+                height: 158px;
+                top: calc(50% - 100px);
+                left: calc(50% - 100px);
+            }
+
+            &-2 {
+                width: 96px;
+                height: 96px;
+                top: calc(50% + 8px);
+                left: calc(50% + 8px);
+            }
+
+            &.animate {
+
+                .intro__animation-img-G-1 {
+                    top: calc(50% - 71px);
+                    left: calc(50% - 71px);
+                }
+
+                .intro__animation-img-G-2 {
+                    top: calc(50% - 9px);
+                    left: calc(50% - 8px);
+                }
+            }
+
+            &.rotate {
+                    transform: rotate(45deg);
+            }
+        }
+
+        &-img-O,
+        &-img-N,
+        &-img-F,
+        &-img-I,
+        &-img-G {
+            margin-left: -40px;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin-top: 80px;
+        position: relative;
+        user-select: none;
+
+        &-bg {
+            position: relative;
+            right: 0;
+            bottom: -1px;
+            width: 100%;
+            height: 100%;
+        }
+
+        &-btn {
+            position: absolute;
+            right: 25px;
+            bottom: 25px;
+            width: 46px;
+            height: 46px;
+            transition: all 0.5s;
+
+            &:hover {
+                rotate: 180deg;
+            }
+        }
+    }
+}
+
+// Этапы анимации для круга I
+@keyframes circle-move-to-center {
+    to {
+        top: calc(50% - 48px);
+        left: calc(50% - 48px);
+        opacity: 1;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes circle-stretch-oval {
+    from {
+        top: calc(50% - 48px);
+        left: calc(50% - 48px);
+    }
+
+    to {
+        height: 210px;
+        top: calc(50% - 100px);
+        left: calc(50% - 48px);
+        border-radius: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes circle-shrink-center-fadeout {
+    from {
+        height: 210px;
+        top: calc(50% - 100px);
+        left: calc(50% - 48px);
+        border-radius: 50px;
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(0.1) rotate(0deg);
+        top: calc(50% - 48px);
+        left: calc(50% - 48px);
+        opacity: 0;
+    }
+}
+
+@keyframes circle-shrink-center-fadeout-return {
+    from {
+        transform: scale(0.1) rotate(0deg);
+        top: calc(50% - 48px);
+        left: calc(50% - 48px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) rotate(0deg);
+        top: calc(50% - 110px);
+        left: calc(50% - 48px);
+        opacity: 1;
+    }
+}
+
+// Этапы анимации для ромба I
+@keyframes rhomb-fadeout-move-center {
+    to {
+        top: calc(50% - 41.5px);
+        left: calc(50% - 41.5px);
+        opacity: 0;
+        transform: scale(0.1) rotate(-45deg);
+    }
+}
+
+@keyframes rhomb-fadeout-move-center-opacity {
+    from {
+        top: calc(50% - 41.5px);
+        left: calc(50% - 41.5px);
+        opacity: 0;
+        transform: scale(0.1) rotate(-45deg);
+    }
+
+    to {
+        opacity: 1;
+        top: calc(50% - 41.5px);
+        left: calc(50% - 41.5px);
+        transform: scale(1) rotate(-45deg);
+    }
+}
+
+@keyframes rhomb-fadein-move-down {
+    from {
+        top: calc(50% - 41.5px);
+        left: calc(50% - 41.5px);
+        opacity: 1;
+    }
+
+    to {
+        top: calc(50% + 10px);
+        left: calc(50% - 41.5px);
+        opacity: 1;
+    }
+}
